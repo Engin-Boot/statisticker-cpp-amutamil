@@ -7,19 +7,17 @@ namespace Statistics {
     class stats{
     public:
         float avrg, maxi, mini;
-        float average(const std::vector<float>& n);
-        float max(const std::vector<float>& n);
-        float min(const std::vector<float>& n);
-    };
-    float stats::average(const std::vector<float>& n) {
+        float average(const std::vector<float>& n)
+         {
         float sum = 0;
         for (unsigned int i = 0;i < n.size();i++)
         {
             sum += n[i];
         }
         return sum/n.size();
-    }
-    float stats::max(const std::vector<float>& n) {
+        }
+        float max(const std::vector<float>& n)
+        {
         float maximum = FLT_MIN;
         if (n.size() == 0)
         {
@@ -35,7 +33,7 @@ namespace Statistics {
             return maximum;
         }
     }
-    float stats::min(const std::vector<float>& n) {
+float stats::min(const std::vector<float>& n) {
         float minimum = FLT_MAX;
         if (n.size() == 0)
         {
@@ -51,6 +49,9 @@ namespace Statistics {
             return minimum;
         }
     }
+    };
+    
+    
     stats ComputeStatistics(const std::vector<float>& num);
     
 }
