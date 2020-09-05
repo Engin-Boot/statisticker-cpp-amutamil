@@ -9,10 +9,6 @@ namespace Statistics {
         float avrg, maxi, mini;
         float average(const std::vector<float>& n)
         {   
-            if (n.size() == 0)
-            {
-                return sqrt(-1);
-            }
             
             float sum = 0;
             for (unsigned int i = 0;i < n.size();i++)
@@ -24,10 +20,6 @@ namespace Statistics {
         
         float max(const std::vector<float>& n)
         {
-            if (n.size() == 0)
-            {
-                return sqrt(-1);
-            }
                 float maximum = FLT_MIN;
                 for (unsigned int i = 0;i < n.size();i++)
                 {
@@ -39,10 +31,6 @@ namespace Statistics {
         
     float min(const std::vector<float>& n)
     {
-        if (n.size() == 0)
-        {
-            return sqrt(-1);
-        }
             float minimum = FLT_MAX;
             for (unsigned int i = 0;i < n.size();i++)
             {
