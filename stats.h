@@ -33,7 +33,7 @@ namespace Statistics {
             return maximum;
         }
     }
-float stats::min(const std::vector<float>& n) {
+float min(const std::vector<float>& n) {
         float minimum = FLT_MAX;
         if (n.size() == 0)
         {
