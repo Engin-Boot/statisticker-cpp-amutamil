@@ -1,14 +1,17 @@
 #include <vector>
+#include<cmath>
+#include<climits>
+using namespace std;
 
 namespace Statistics {
     class stats{
     public:
         float avrg, maxi, mini;
-        float average(const vector<float>& n);
-        float max(const vector<float>& n);
-        float min(const vector<float>& n);
+        float average(const std::vector<float>& n);
+        float max(const std::vector<float>& n);
+        float min(const std::vector<float>& n);
     };
-    float stats::average(const vector<float>& n) {
+    float stats::average(const std::vector<float>& n) {
         float sum = 0;
         for (unsigned int i = 0;i < n.size();i++)
         {
@@ -16,8 +19,8 @@ namespace Statistics {
         }
         return sum/n.size();
     }
-    float stats::max(const vector<float>& n) {
-        float maximum = INT_MIN;
+    float stats::max(const std::vector<float>& n) {
+        float maximum = FLT_MIN;
         if (n.size() == 0)
         {
             return 0;
@@ -32,8 +35,8 @@ namespace Statistics {
             return maximum;
         }
     }
-    float stats::min(const vector<float>& n) {
-        float minimum = INT_MAX;
+    float stats::min(const std::vector<float>& n) {
+        float minimum = FLT_MAX;
         if (n.size() == 0)
         {
             return 0;
