@@ -8,50 +8,49 @@ namespace Statistics {
     public:
         float avrg, maxi, mini;
         float average(const std::vector<float>& n)
-         {
-        float sum = 0;
-        for (unsigned int i = 0;i < n.size();i++)
-        {
-            sum += n[i];
-        }
-        return sum/n.size();
-        }
-        float max(const std::vector<float>& n)
-        {
-        float maximum = FLT_MIN;
-        if (n.size() == 0)
-        {
-            return 0;
-        }
-        else
-        {
+        {   
+            if (n.size() == 0)
+            {
+                return sqrt(-1);
+            }
+            
+            float sum = 0;
             for (unsigned int i = 0;i < n.size();i++)
             {
-                if (n[i] > maximum)
-                    maximum = n[i];
+                sum += n[i];
             }
-            return maximum;
+            return sum/n.size();
         }
-    }
-float min(const std::vector<float>& n) {
-        float minimum = FLT_MAX;
+        
+        float max(const std::vector<float>& n)
+        {
+            if (n.size() == 0)
+            {
+                return sqrt(-1);
+            }
+                float maximum = FLT_MIN;
+                for (unsigned int i = 0;i < n.size();i++)
+                {
+                    if (n[i] > maximum)
+                        maximum = n[i];
+                }
+                return maximum;  
+        }
+        
+    float min(const std::vector<float>& n)
+    {
         if (n.size() == 0)
         {
-            return 0;
+            return sqrt(-1);
         }
-        else
-        {
+            float minimum = FLT_MAX;
             for (unsigned int i = 0;i < n.size();i++)
             {
                 if (n[i] < minimum)
                     minimum = n[i];
             }
-            return minimum;
-        }
+            return minimum;    
     }
-    };
-    
-    
-    stats ComputeStatistics(const std::vector<float>& num);
-    
+};
+    stats ComputeStatistics(const std::vector<float>& num);   
 }
