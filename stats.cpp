@@ -1,4 +1,5 @@
 #include "stats.h"
+#include<cmath>
 using namespace Statistics;
 
 stats Statistics::ComputeStatistics(const std::vector<float>& num ) {
@@ -6,9 +7,9 @@ stats Statistics::ComputeStatistics(const std::vector<float>& num ) {
     Statistics::stats obj;
     if(num.size()==0)
     {
-        obj.avrg = 0;
-        obj.mini = 0;
-        obj.maxi = 0;
+        obj.avrg = sqrt(-1);
+        obj.mini = sqrt(-1);
+        obj.maxi = sqrt(-1);
         return obj;
     }
     obj.avrg = obj.average(num);
