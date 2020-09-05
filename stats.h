@@ -1,6 +1,6 @@
 #include <vector>
 #include<cmath>
-#include<float>
+#include<cfloat>
 using namespace std;
 
 namespace Statistics {
