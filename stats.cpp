@@ -1,7 +1,7 @@
 #include "stats.h"
 using namespace Statistics;
 
-Stats Statistics::ComputeStatistics(const std::vector<float>& num ) {
+stats Statistics::ComputeStatistics(const std::vector<float>& num ) {
     //Implement statistics here
     Statistics::stats obj;
     obj.avrg = obj.average(num);
