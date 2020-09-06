@@ -11,10 +11,10 @@ namespace Statistics {
         {   
             
             float sum = 0;
-            for (unsigned int i = 0;i < n.size() && !(isnan(n[i]));i++)
+            for (unsigned int i = 0;i < n.size();i++)
             {
-                
-                sum += n[i];
+                if( !isnan (n[i]) ){
+                sum += n[i];}
             }
             return sum/n.size();
         }
