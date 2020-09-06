@@ -35,7 +35,7 @@ TEST_CASE("average, minimum and maximum when NaN is input") {
 
 TEST_CASE("average, minimum and maximum when all inputs are NaN") {
     auto computedStats = Statistics::ComputeStatistics({nan("")});
-    REQUIRE(std::isnan(computedStats.avrg ) == 0);
-    REQUIRE(std::isnan(computedStats.maxi ) == FLT_MIN);
-    REQUIRE(std::isnan(computedStats.mini ) == FLT_MAX);
+    REQUIRE(computedStats.avrg  == 0);
+    REQUIRE(computedStats.maxi  == FLT_MIN);
+    REQUIRE(computedStats.mini  == FLT_MAX);
 }
