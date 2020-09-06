@@ -32,10 +32,10 @@ TEST_CASE("average, minimum and maximum when NaN is input") {
     REQUIRE(std::abs(computedStats.maxi - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.mini - 1.5) < epsilon);
 }
-/*
+
 TEST_CASE("average, minimum and maximum when all inputs are NaN") {
     auto computedStats = Statistics::ComputeStatistics({nan("")});
     REQUIRE(computedStats.avrg  == 0);
     REQUIRE(computedStats.maxi  == FLT_MIN);
     REQUIRE(computedStats.mini  == FLT_MAX);
-}*/
+}
