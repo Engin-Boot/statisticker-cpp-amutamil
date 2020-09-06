@@ -2,7 +2,7 @@
 
 #include "catch.hpp"
 #include "stats.h"
-
+#include <cfloat>
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
@@ -33,9 +33,9 @@ TEST_CASE("average, minimum and maximum when NaN is input") {
     REQUIRE(std::abs(computedStats.mini - 1.5) < epsilon);
 }
 
-TEST_CASE("average, minimum and maximum when only one input and it is NaN") {
+TEST_CASE("average, minimum and maximum when all inputs are NaN") {
     auto computedStats = Statistics::ComputeStatistics({nan("")});
-    REQUIRE(std::isnan(computedStats.avrg ) == true);
-    REQUIRE(std::isnan(computedStats.maxi ) == true);
-    REQUIRE(std::isnan(computedStats.mini ) == true);
+    REQUIRE(std::isnan(computedStats.avrg ) == 0);
+    REQUIRE(std::isnan(computedStats.maxi ) == FLT_MIN);
+    REQUIRE(std::isnan(computedStats.mini ) == FLT_MAX);
 }
