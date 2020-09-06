@@ -10,13 +10,13 @@ namespace Statistics {
         float average(const std::vector<float>& n)
         {   
             
-            float sum = 0;
+            float sum = 0,count=0;
             for (unsigned int i = 0;i < n.size();i++)
             {
                 if( !isnan (n[i]) ){
-                sum += n[i];}
+                sum += n[i];count+=1;}
             }
-            return sum/n.size();
+            return sum/count;
         }
         
         float max(const std::vector<float>& n)
