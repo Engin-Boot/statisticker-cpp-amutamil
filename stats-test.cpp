@@ -24,3 +24,11 @@ TEST_CASE("average is NaN for empty array") {
     //Design the REQUIRE statement here.
     //Use http://www.cplusplus.com/reference/cmath/isnan/
 }
+
+TEST_CASE("reports average, minimum and maximum") {
+    auto computedStats = Statistics::ComputeStatistics({nan(""),1.5, 8.9, 3.2, 4.5});
+    float epsilon = 0.001;
+    REQUIRE(std::abs(computedStats.avrg - 4.525) < epsilon);
+    REQUIRE(std::abs(computedStats.maxi - 8.9) < epsilon);
+    REQUIRE(std::abs(computedStats.mini - 1.5) < epsilon);
+}
